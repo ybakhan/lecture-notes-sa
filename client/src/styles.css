@@ -1,0 +1,69 @@
+.header {
+  color: #007bff;
+  font-family: cursive;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.questionDiv {
+  padding-top: 20px;
+  padding-right: 20px;
+}
+
+.transcription-div {
+  border: 1px solid #ddd;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.chat-history {
+  border: 1px solid #ddd;
+  height: 300px;
+  overflow-y: scroll;
+}
+
+#message-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.user-message {
+  background-color: #eee;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.server-message {
+  background-color: #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.send-button {
+  margin-top: 10px;
+  float:right;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:disabled {
+  background-color: #aaa;
+}

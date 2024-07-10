@@ -1,0 +1,14 @@
+client/.parcel-cache/*
+client/audio/*
+client/dist/*
+client/node_modules/*
+client/package-lock.json
+client/yarn.lock
+server/.yarn/*
+server/coverage/*
+server/dist/*
+server/node_modules/*
+server/.git-hooks/*
+server/yarn.lock
+server/package-lock.json
+.DS_Store

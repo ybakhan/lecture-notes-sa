@@ -1,0 +1,39 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "cfn-yhzai-sa Task Definition"
+
+Resources:
+  # The task definition. This is a simple metadata description of what
+  # container to run, and what resource requirements it has.
+  YhzaiSaTaskDefinition:
+    Type: AWS::ECS::TaskDefinition
+    Properties:
+      Family: cfn-yhzai-sa-task
+      TaskRoleArn: arn:aws:iam::414118545568:role/yhzai-sa-task
+      ExecutionRoleArn: arn:aws:iam::414118545568:role/yhzai-sa-ecs
+      NetworkMode: awsvpc
+      RequiresCompatibilities:
+        - FARGATE
+      Cpu: 256
+      Memory: 512
+      RuntimePlatform:
+        OperatingSystemFamily: LINUX
+        CpuArchitecture: ARM64
+      ContainerDefinitions:
+        - Image: 414118545568.dkr.ecr.us-east-2.amazonaws.com/yhzai-sa:latest
+          Name: cfn-yhzai-sa-container
+          PortMappings:
+            - Name: cfn-yhzai-sa-port
+              ContainerPort: 8080
+              HostPort: 8080
+              Protocol: tcp
+              AppProtocol: http
+          Essential: true
+          LogConfiguration:
+            LogDriver: awslogs
+            Options:
+              awslogs-group: yhzai-sa-logs
+              awslogs-region: !Ref AWS::Region
+              awslogs-stream-prefix: yhzai-sa
+              awslogs-create-group: true
+              max-buffer-size: 25m
+              mode: non-blocking

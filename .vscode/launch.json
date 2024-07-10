@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+      {
+        "type": "chrome",
+        "request": "launch",
+        "name": "Launch Chrome against localhost",
+        "url": "http://localhost:1234",
+        "webRoot": "${workspaceFolder}/client",
+        "sourceMapPathOverrides": {
+          "/__parcel_source_root/*": "${webRoot}/*"
+        }
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "njs server",
+        "skipFiles": ["<node_internals>/**"],
+        "program": "${workspaceFolder}/server-njs/dist/index.js",
+        "preLaunchTask": "tsc: build - server-njs/tsconfig.json",
+        "outFiles": ["${workspaceFolder}/server-njs/dist/*.js"]
+      }
+    ]
+  }
